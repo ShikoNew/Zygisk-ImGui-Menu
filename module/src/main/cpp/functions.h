@@ -80,8 +80,8 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    HOOK("0x12e71c4", isGodMode, old_ApplyDamagePlayer);
-    HOOK("0x12cdfd0", Backend, old_Backend);
+    HOOK("0x12e655c", isGodMode, old_ApplyDamagePlayer);
+    HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
 }
 
