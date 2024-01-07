@@ -6,7 +6,7 @@
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
 bool isGodMode; float damageMultiplier = 0.18f;
-bool isGod; int damageMultiplier = 1;
+bool isGod; int damageMultiplie = 1;
 bool bypass = true;
 bool nokick = true;
 float speedplayer;
@@ -63,7 +63,7 @@ void ApplyDamageEnemy(void *instance, float damage) {
 void (*old_ApplyDamagePlayer)(void *instance);
 void ApplyDamagePlayer(void *instance) {
     if (instance != NULL) {
-        if (isGodMode) {
+        if (isGod) {
             return;
         }
     }
@@ -72,7 +72,7 @@ void ApplyDamagePlayer(void *instance) {
 void (*old_ApplyDamageEnemy)(void *instance, int damage);
 void ApplyDamageEnemy(void *instance, int damage) {
     if (instance != NULL) {
-        damage *= damageMultiplier;
+        damage *= damageMultiplie;
     }
     return old_ApplyDamageEnemy(instance, damage);
 }
