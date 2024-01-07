@@ -13,7 +13,8 @@ void DrawMenu()
     {
         Begin(OBFUSCATE("ZyCheats"));
         ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
-       if (BeginTabItem(OBFUSCATE("Tab Items"))) {
+        if (BeginTabBar("Menu", tab_bar_flags)) {
+            if (BeginTabItem(OBFUSCATE("Tab Items"))) {
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
@@ -22,9 +23,6 @@ void DrawMenu()
             }
             EndTabBar();
         }
-        if (BeginTabBar("Menu", tab_bar_flags)) {
-       float speedplayer;
-SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 3);
             if (BeginTabItem(OBFUSCATE("Account"))) {
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
