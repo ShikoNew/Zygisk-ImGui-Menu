@@ -4,11 +4,9 @@
 
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
-
+#pragma once
 using namespace ImGui;
 
-#include <Icon.h>
-#include <Iconcpp.h>
 
 static int page = 1;
 bool svaston;
