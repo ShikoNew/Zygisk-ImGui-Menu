@@ -6,8 +6,8 @@
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 
 using namespace ImGui;
-
-
+static int page = 1;
+bool svaston;
 void styl() {
 	ImGuiStyle& style = ImGui::GetStyle();
 
