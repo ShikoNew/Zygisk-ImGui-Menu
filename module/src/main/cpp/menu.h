@@ -6,7 +6,8 @@
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 
 using namespace ImGui;
-
+#include "Icon.h"
+#include "Iconcpp.h"
 
 void styl() {
 	ImGuiStyle& style = ImGui::GetStyle();
