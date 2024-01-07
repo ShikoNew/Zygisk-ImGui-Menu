@@ -13,7 +13,7 @@ void DrawMenu()
     {
         Begin(OBFUSCATE("ZyCheats"));
         ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
-       if (BeginTabItem(BFUSCATE("Tab Items"))) {
+       if (BeginTabItem(OBFUSCATE("Tab Items"))) {
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
