@@ -80,7 +80,7 @@ void *hack_thread(void *arg) {
     } while (!g_il2cppBaseMap.isValid());
     KITTY_LOGI("il2cpp base: %p", (void*)(g_il2cppBaseMap.startAddress));
     Pointers();
-    Hooks();
+    //Hooks();
     auto eglhandle = dlopen("libunity.so", RTLD_LAZY);
     auto eglSwapBuffers = dlsym(eglhandle, "eglSwapBuffers");
     DobbyHook((void*)eglSwapBuffers,(void*)hook_eglSwapBuffers,
