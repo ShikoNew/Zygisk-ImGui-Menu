@@ -11,7 +11,7 @@ bool nokick = true;
 float speedplayer;
 bool speed;
 
-void (*SetSpeed)(void*, CryptoFloat);
+void (*SetSpeed)(void*, encryptionFloat);
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
@@ -97,7 +97,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    SetSpeed = (void(*)(void*, CryptoFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
+    SetSpeed = (void(*)(void*, encryptionFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
     HOOK("0x12e655c", isGodMode, old_ApplyDamagePlayer);
     HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
