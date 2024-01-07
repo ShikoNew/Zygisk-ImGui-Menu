@@ -62,6 +62,7 @@ void DrawMenu()
                 
            
             if (BeginTabItem(OBFUSCATE("Player"))) {
+		    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
                 Checkbox(OBFUSCATE("anti close"), &bypass);
                 Checkbox(OBFUSCATE("No kick"), &nokick);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
