@@ -16,7 +16,13 @@ void Pointers() {
 }
 
 void Patches() {
-    void (*old_ApplyDamagePlayer)(void* instance);
+    PATCH_SWITCH("0x10A69A0", "200080D2C0035FD6", showAllItems);
+    PATCH_SWITCH("0xF148A4", "E07C80D2C0035FD6", freeItems);
+}
+
+// declare your hooks here
+
+void (*old_ApplyDamagePlayer)(void* instance);
 void ApplyDamagePlayer(void instance) {
     if (instance != NULL) {
         if (isGodMode) {
@@ -32,11 +38,8 @@ void ApplyDamageEnemy(void instance, int damage) {
     }
     return old_ApplyDamageEnemy(instance, damage);
 }
-    PATCH_SWITCH("0x10A69A0", "200080D2C0035FD6", showAllItems);
-    PATCH_SWITCH("0xF148A4", "E07C80D2C0035FD6", freeItems);
-}
 
-// declare your hooks here
+
 void (*old_Backend)(void *instance);
 void Backend(void *instance) {
     if (instance != NULL) {
