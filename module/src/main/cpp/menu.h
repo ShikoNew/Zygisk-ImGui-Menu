@@ -62,7 +62,7 @@ void DrawMenu()
                 
            
             if (BeginTabItem(OBFUSCATE("Player"))) {
-		    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
+		    SliderFloat(OBFUSCATE("Speed"), &damageMultiplier, 0.1, 0.15);
                 Checkbox(OBFUSCATE("anti close"), &bypass);
                 Checkbox(OBFUSCATE("No kick"), &nokick);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
@@ -91,7 +91,7 @@ void DrawMenu()
 if (BeginTabItem(OBFUSCATE("Player"))) {
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageM, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
                 Checkbox(OBFUSCATE("God Mode"), &isGod);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
