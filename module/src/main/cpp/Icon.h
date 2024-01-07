@@ -1,3 +1,4 @@
+#define ZYGISK_MENU_TEMPLATE_MENU_H
 #pragma once
 
 /**
