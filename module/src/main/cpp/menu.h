@@ -55,7 +55,7 @@ void styl() {
     }
 
 
-void DrawMenu(){
+void DrawMenu(){ styl();
 	
   
 
@@ -70,22 +70,22 @@ void DrawMenu(){
 	ImGui::Spacing();
     
     
-        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(300,100)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(300,100)))
         {
             page = 2;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(300,100)))
         {
             page = 3;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(300,100)))
         {
             page = 4;
         }
