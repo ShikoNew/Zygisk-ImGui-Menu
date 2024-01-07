@@ -53,8 +53,9 @@ void styl() {
 
 void DrawMenu()
 { styl();
+ const ImVec2 window_size = ImVec2(900, 800);
     static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    {  const ImVec2 window_size = ImVec2(900, 800);
+    {  
         Begin(OBFUSCATE("Test Nigga"));
         ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
         if (BeginTabBar("Menu", tab_bar_flags)) {
