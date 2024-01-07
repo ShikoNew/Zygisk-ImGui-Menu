@@ -1,10 +1,10 @@
 //
 // Created by lbert on 4/15/2023.
 //
-
+#pragma once
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
-#pragma once
+
 using namespace ImGui;
 
 #include "Icon.h"
@@ -59,9 +59,36 @@ void DrawMenu(){ styl();
 	
   
 
-	ImGui::Begin("Bonikken Cheats | 0.23.1 f1 APK", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+	const ImVec2 window_size = ImVec2(900, 800);
+    const char* window_title = "Nazi - Menu [x64_x32]";
+	
+//wtff
+	
+	///wtff
+		
+    const char* name = "Shiden x Nigga";
+    const char* version = "v1.0";
+    
+    // Begin the main menu window
+   ImGui::SetNextWindowSize(window_size);
+   if (ImGui::Begin(window_title, nullptr))
 
-    const auto& CurrentWindowPosi = ImGui::GetWindowPos();
+	
+    ImGui::SetNextWindowSize(window_size);
+    if (ImGui::Begin(window_title, nullptr)) 
+		    {
+        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Creator : %s",name);
+        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
+        ImGui::Text("FPS : %.3f ms (%.1f)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+    
+		
+        
+        
+        ImVec2 cursor_pos = ImGui::GetCursorScreenPos();
+        ImGui::GetWindowDrawList()->AddLine(cursor_pos,
+        ImVec2(cursor_pos.x + ImGui::GetContentRegionAvail().x, cursor_pos.y),
+        ImGui::GetColorU32(ImGuiCol_Text));
+        ImGui::Spacing();
         // Early out if the window is collapsed, as an optimization.
         
 
