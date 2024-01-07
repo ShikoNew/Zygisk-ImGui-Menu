@@ -96,22 +96,22 @@ void DrawMenu(){ styl();
 	ImGui::Spacing();
     
     
-        if (ImGui::Button(" Visuals",ImVec2(50,100)))
+        if (ImGui::Button(" Visuals",ImVec2(100,100)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(" Skins",ImVec2(50,100)))
+        if (ImGui::Button(" Skins",ImVec2(100,100)))
         {
             page = 2;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(" Legit",ImVec2(50,100)))
+        if (ImGui::Button(" Legit",ImVec2(100,100)))
         {
             page = 3;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(" Configs",ImVec2(50,100)))
+        if (ImGui::Button(" Configs",ImVec2(100,100)))
         {
             page = 4;
         }
