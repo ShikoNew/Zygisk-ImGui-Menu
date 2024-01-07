@@ -51,62 +51,71 @@ void styl() {
     }
 
 
-void DrawMenu()
-{ styl();
- const ImVec2 window_size = ImVec2(900, 800);
-    static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    {  
-        Begin(OBFUSCATE("Test Nigga"));
-        ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
-        if (BeginTabBar("Menu", tab_bar_flags)) {
-                
-           
-            if (BeginTabItem(OBFUSCATE("Player"))) {
-		    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
-                Checkbox(OBFUSCATE("anti close"), &bypass);
-                Checkbox(OBFUSCATE("No kick"), &nokick);
-                TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+void DrawMenu(){
+	
+  
 
-                //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
-                Checkbox(OBFUSCATE("God Mode"), &isGodMode);
-                // here menu stuff, remove test btw
-                // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-                if (Button(OBFUSCATE("Add Currency"))) {
-                    // code for button action
-                    addCurrency = true;
-                }
-                TextUnformatted(OBFUSCATE("Adds 1000 gems"));
-                if (Button(OBFUSCATE("Add Skins"))) {
-                    // code for button action
-                    addSkins = true;
-                }
-                Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
-                Checkbox(OBFUSCATE("Free Items"), &freeItems);
-                Checkbox(OBFUSCATE("Show Items"), &showAllItems);
-                EndTabItem();
-            }
-		//new
+	ImGui::Begin("Bonikken Cheats | 0.23.1 f1 APK", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
 
+    const auto& CurrentWindowPosi = ImGui::GetWindowPos();
+        // Early out if the window is collapsed, as an optimization.
+        
 
-if (BeginTabItem(OBFUSCATE("Player"))) {
-                TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
-
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageM, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
-                Checkbox(OBFUSCATE("God Mode"), &isGod);
-                // here menu stuff, remove test btw
-                // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-               
-                EndTabItem();
-            }
-
-
-		//new
-            EndTabBar();
+    // Menu Bar
+	
+	ImGui::Spacing();
+    
+    
+        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(190,50)))
+        {
+            page = 1;
         }
-        Patches();
-        End();
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(190,50)))
+        {
+            page = 2;
+        }
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(190,50)))
+        {
+            page = 3;
+        }
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(190,50)))
+        {
+            page = 4;
+        }
+        
+		ImGui::Spacing();
+    
+
+
+    if (page == 1) {
+page = 1;
+        
+        
+		
+    } else if (page == 2) {
+page = 2;
+    
+	
+    } else if (page == 3) {
+       page = 3; 
+	   } else if (page == 4) {
+		page = 4;
+    if (ImGui::CollapsingHeader("Configs")) {
+	
+		}
+		if (ImGui::CollapsingHeader("Menu Settings")) {
+		 //ImGui::Checkbox(OBFUSCATE("watermark"), &watermark);
+	    
+        
+		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &svaston);
+		  }
     }
+
 }
+
 
 void SetupImgui() {
     IMGUI_CHECKVERSION();
