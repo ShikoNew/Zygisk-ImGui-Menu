@@ -70,12 +70,12 @@ void ApplyDamagePlaye(void *instance) {
     }
     return old_ApplyDamagePlaye(instance);
 }
-void (*old_ApplyDamageEnemy)(void *instance, int damage);
-void ApplyDamageEnemy(void *instance, int damage) {
+void (*old_ApplyDamageEnem)(void *instance, int damage);
+void ApplyDamageEnem(void *instance, int damage) {
     if (instance != NULL) {
         damage *= damageMultiplie;
     }
-    return old_ApplyDamageEnemy(instance, damage);
+    return old_ApplyDamageEnem(instance, damage);
 }
 
 
