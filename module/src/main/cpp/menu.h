@@ -168,6 +168,7 @@ page = 2;
         
 		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &svaston);
 		  }
+	    Patches();
     }
 }
 }
