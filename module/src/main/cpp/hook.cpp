@@ -32,6 +32,8 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
+#include <Icon.h>
+#include <Iconcpp.h>
 #define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
 
 int glHeight, glWidth;
