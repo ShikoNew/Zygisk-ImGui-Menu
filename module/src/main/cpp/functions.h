@@ -6,6 +6,7 @@
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
 bool isGodMode; float damageMultiplier = 0.18f;
+bool isGod; int damageMultiplier = 1;
 bool bypass = true;
 bool nokick = true;
 float speedplayer;
@@ -41,7 +42,7 @@ PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
 // declare your hooks here
 
 void (*old_ApplyDamagePlayer)(void *instance);
-void ApplyDamagePlayerr(void *instance) {
+void ApplyDamagePlayer(void *instance) {
     if (instance != NULL) {
         if (isGodMode) {
             return;
@@ -59,22 +60,22 @@ void ApplyDamageEnemy(void *instance, float damage) {
 
 
    
-///void (*old_ApplyDamagePlayer)(void *instance);
-//void ApplyDamagePlayer(void *instance) {
-  //  if (instance != NULL) {
-  //      if (isGodMode) {
-   //         return;
-    //    }
- //   }
-   // return old_ApplyDamagePlayer(instance);
-//}
-//void (*old_ApplyDamageEnemy)(void *instance, int damage);
-//void ApplyDamageEnemy(void *instance, int damage) {
-   // if (instance != NULL) {
-       // damage *= damageMultiplier;
-  //  }
-//    return old_ApplyDamageEnemy(instance, damage);
-//}
+void (*old_ApplyDamagePlayer)(void *instance);
+void ApplyDamagePlayer(void *instance) {
+    if (instance != NULL) {
+        if (isGodMode) {
+            return;
+        }
+    }
+    return old_ApplyDamagePlayer(instance);
+}
+void (*old_ApplyDamageEnemy)(void *instance, int damage);
+void ApplyDamageEnemy(void *instance, int damage) {
+    if (instance != NULL) {
+        damage *= damageMultiplier;
+    }
+    return old_ApplyDamageEnemy(instance, damage);
+}
 
 
 void (*old_Backend)(void *instance);
