@@ -71,7 +71,7 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("God Mode"), &isGodMode);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-                if (Button(OBFUSCATE("Add Currency"))) {
+                if (Button(OBFUSCATE(ICON_FA_USER"Add Currency"))) {
                     // code for button action
                     addCurrency = true;
                 }
