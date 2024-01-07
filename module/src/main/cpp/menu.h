@@ -6,7 +6,7 @@
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 
 using namespace ImGui;
-
+float speedplayer;
 void DrawMenu()
 {
     static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -14,6 +14,8 @@ void DrawMenu()
         Begin(OBFUSCATE("ZyCheats"));
         ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
         if (BeginTabBar("Menu", tab_bar_flags)) {
+       float speedplayer;
+SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 3);
             if (BeginTabItem(OBFUSCATE("Account"))) {
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
