@@ -22,8 +22,8 @@ void Patches() {
 
 // declare your hooks here
 
-void (*old_ApplyDamagePlayer)(void* instance);
-void ApplyDamagePlayer(void instance) {
+void (*old_ApplyDamagePlayer)(void *instance);
+void ApplyDamagePlayer(void *instance) {
     if (instance != NULL) {
         if (isGodMode) {
             return;
@@ -31,8 +31,8 @@ void ApplyDamagePlayer(void instance) {
     }
     return old_ApplyDamagePlayer(instance);
 }
-void (*old_ApplyDamageEnemy)(void* instance, int damage);
-void ApplyDamageEnemy(void instance, int damage) {
+void (*old_ApplyDamageEnemy)(void *instance, int damage);
+void ApplyDamageEnemy(void *instance, int damage) {
     if (instance != NULL) {
         damage *= damageMultiplier;
     }
