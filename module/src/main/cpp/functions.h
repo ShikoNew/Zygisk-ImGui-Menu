@@ -5,7 +5,7 @@
 
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-bool isGodMode; float damageMultiplier = 1;
+bool isGodMode; float damageMultiplier = 0.1;
 bool bypass = true;
 bool nokick = true;
 float speedplayer;
