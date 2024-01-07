@@ -124,12 +124,37 @@ void DrawMenu(){ styl();
     if (page == 1) {
 page = 1;
         
-        
+        	    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
+                Checkbox(OBFUSCATE("anti close"), &bypass);
+                Checkbox(OBFUSCATE("No kick"), &nokick);
+                TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+
+                //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                Checkbox(OBFUSCATE("God Mode"), &isGodMode);
+                // here menu stuff, remove test btw
+                // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
+                if (Button(OBFUSCATE("Add Currency"))) {
+                    // code for button action
+                    addCurrency = true;
+                }
+                TextUnformatted(OBFUSCATE("Adds 1000 gems"));
+                if (Button(OBFUSCATE("Add Skins"))) {
+                    // code for button action
+                    addSkins = true;
+                }
+                Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
+                Checkbox(OBFUSCATE("Free Items"), &freeItems);
+                Checkbox(OBFUSCATE("Show Items"), &showAllItems);
 		
     } else if (page == 2) {
 page = 2;
     
-	
+	TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+
+                SliderInt(OBFUSCATE("Damage Multiplier"), &damageM, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                Checkbox(OBFUSCATE("God Mode"), &isGod);
+                // here menu stuff, remove test btw
+                // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
     } else if (page == 3) {
        page = 3; 
 	   } else if (page == 4) {
