@@ -1,14 +1,13 @@
 //
 // Created by lbert on 4/15/2023.
 //
-#pragma once
+
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 
 using namespace ImGui;
 
-#include "Icon.h"
-#include "Iconcpp.h"
+
 
 static int page = 1;
 bool svaston;
@@ -97,22 +96,22 @@ void DrawMenu(){ styl();
 	ImGui::Spacing();
     
     
-        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(50,100)))
+        if (ImGui::Button(" Visuals",ImVec2(50,100)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(50,100)))
+        if (ImGui::Button(" Skins",ImVec2(50,100)))
         {
             page = 2;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(50,100)))
+        if (ImGui::Button(" Legit",ImVec2(50,100)))
         {
             page = 3;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(50,100)))
+        if (ImGui::Button(" Configs",ImVec2(50,100)))
         {
             page = 4;
         }
