@@ -1,6 +1,8 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
+void (*isGodMode)(void*, CryptoFloat);
+
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
 bool isGodMode; int damageMultiplier = 1;
