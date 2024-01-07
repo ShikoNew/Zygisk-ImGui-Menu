@@ -5,13 +5,12 @@
 
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-bool isGodMode; int damageMultiplier = 1;
+bool isGodMode; float damageMultiplier = 1;
 bool bypass = true;
 bool nokick = true;
 float speedplayer;
 bool speed;
 
-void (*SetSpeed)(void*, encryptionFloat);
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
@@ -41,18 +40,8 @@ PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
 
 // declare your hooks here
 
-    if (speed) {
-        SetSpeed(instance, CryptoFloatHook(speedplayer));
-    } else if (!speed) {
-        if (setdefaultspeed) {
-            SetSpeed(instance, CryptoFloatHook(0.18f));
-            setdefaultspeed = false;
-        }
-    }
-
-///
 void (*old_ApplyDamagePlayer)(void *instance);
-void ApplyDamagePlayer(void *instance) {
+void ApplyDamagePlayerr(void *instance) {
     if (instance != NULL) {
         if (isGodMode) {
             return;
@@ -60,13 +49,32 @@ void ApplyDamagePlayer(void *instance) {
     }
     return old_ApplyDamagePlayer(instance);
 }
-void (*old_ApplyDamageEnemy)(void *instance, int damage);
-void ApplyDamageEnemy(void *instance, int damage) {
+void (*old_ApplyDamageEnemy)(void *instance, float damage);
+void ApplyDamageEnemy(void *instance, float damage) {
     if (instance != NULL) {
         damage *= damageMultiplier;
     }
     return old_ApplyDamageEnemy(instance, damage);
 }
+
+
+   
+///void (*old_ApplyDamagePlayer)(void *instance);
+//void ApplyDamagePlayer(void *instance) {
+  //  if (instance != NULL) {
+  //      if (isGodMode) {
+   //         return;
+    //    }
+ //   }
+    return old_ApplyDamagePlayer(instance);
+//}
+//void (*old_ApplyDamageEnemy)(void *instance, int damage);
+//void ApplyDamageEnemy(void *instance, int damage) {
+   // if (instance != NULL) {
+       // damage *= damageMultiplier;
+  //  }
+//    return old_ApplyDamageEnemy(instance, damage);
+//}
 
 
 void (*old_Backend)(void *instance);
@@ -97,7 +105,6 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    SetSpeed = (void(*)(void*, encryptionFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
     HOOK("0x12e655c", isGodMode, old_ApplyDamagePlayer);
     HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
