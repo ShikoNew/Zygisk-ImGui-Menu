@@ -9,7 +9,7 @@ bool isGodMode; float damageMultiplier = 0.18f;
 bool isGod; int damageMultiplie = 1;
 bool bypass = true;
 bool nokick = true;
-static int page = 1;
+
 float speedplayer;
 bool speed;
 
