@@ -88,7 +88,7 @@ void DrawMenu(){ styl();
         ImGui::GetWindowDrawList()->AddLine(cursor_pos,
         ImVec2(cursor_pos.x + ImGui::GetContentRegionAvail().x, cursor_pos.y),
         ImGui::GetColorU32(ImGuiCol_Text));
-        ImGui::Spacing();
+        
         // Early out if the window is collapsed, as an optimization.
         
 
@@ -97,22 +97,22 @@ void DrawMenu(){ styl();
 	ImGui::Spacing();
     
     
-        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(300,100)))
+        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(50,100)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(300,100)))
+        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(50,100)))
         {
             page = 2;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(300,100)))
+        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(50,100)))
         {
             page = 3;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(300,100)))
+        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(50,100)))
         {
             page = 4;
         }
