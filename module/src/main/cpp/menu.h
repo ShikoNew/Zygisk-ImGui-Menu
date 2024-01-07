@@ -7,8 +7,8 @@
 #pragma once
 using namespace ImGui;
 
-#include "icon.h"
-#include "iconcpp.h"
+#include <Icon.h>
+#include <Iconcpp.h>
 
 static int page = 1;
 bool svaston;
