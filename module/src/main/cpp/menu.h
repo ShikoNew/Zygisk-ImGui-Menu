@@ -8,9 +8,6 @@
 using namespace ImGui;
 
 
-
-static int page = 1;
-bool svaston;
 void styl() {
 	ImGuiStyle& style = ImGui::GetStyle();
 
@@ -54,76 +51,18 @@ void styl() {
     }
 
 
-void DrawMenu(){ styl();
-	
-  
-
-	const ImVec2 window_size = ImVec2(900, 800);
-    const char* window_title = "Nazi - Menu [x64_x32]";
-	
-//wtff
-	
-	///wtff
-		
-    const char* name = "Shiden x Nigga";
-    const char* version = "v1.0";
-    
-    // Begin the main menu window
-   ImGui::SetNextWindowSize(window_size);
-   if (ImGui::Begin(window_title, nullptr))
-
-	
-    ImGui::SetNextWindowSize(window_size);
-    if (ImGui::Begin(window_title, nullptr)) 
-		    {
-        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Creator : %s",name);
-        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
-        ImGui::Text("FPS : %.3f ms (%.1f)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-    
-		
-        
-        
-        ImVec2 cursor_pos = ImGui::GetCursorScreenPos();
-        ImGui::GetWindowDrawList()->AddLine(cursor_pos,
-        ImVec2(cursor_pos.x + ImGui::GetContentRegionAvail().x, cursor_pos.y),
-        ImGui::GetColorU32(ImGuiCol_Text));
-        
-        // Early out if the window is collapsed, as an optimization.
-        
-
-    // Menu Bar
-	
-	ImGui::Spacing();
-    
-    
-        if (ImGui::Button(" Visuals",ImVec2(100,100)))
-        {
-            page = 1;
-        }
-		ImGui::SameLine();
-        if (ImGui::Button(" Skins",ImVec2(100,100)))
-        {
-            page = 2;
-        }
-		ImGui::SameLine();
-        if (ImGui::Button(" Legit",ImVec2(100,100)))
-        {
-            page = 3;
-        }
-		ImGui::SameLine();
-        if (ImGui::Button(" Configs",ImVec2(100,100)))
-        {
-            page = 4;
-        }
-        
-		ImGui::Spacing();
-    
-
-
-    if (page == 1) {
-page = 1;
-        
-        	    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
+void DrawMenu()
+{ styl();
+ const ImVec2 window_size = ImVec2(900, 800);
+    static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    {  
+        Begin(OBFUSCATE("Test Nigga"));
+        ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
+        if (BeginTabBar("Menu", tab_bar_flags)) {
+                
+           
+            if (BeginTabItem(OBFUSCATE("Player"))) {
+		    SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
                 Checkbox(OBFUSCATE("anti close"), &bypass);
                 Checkbox(OBFUSCATE("No kick"), &nokick);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
@@ -144,35 +83,30 @@ page = 1;
                 Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
                 Checkbox(OBFUSCATE("Free Items"), &freeItems);
                 Checkbox(OBFUSCATE("Show Items"), &showAllItems);
-		
-    } else if (page == 2) {
-page = 2;
-    
-	TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+                EndTabItem();
+            }
+		//new
 
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+
+if (BeginTabItem(OBFUSCATE("Player"))) {
+                TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+
+                SliderInt(OBFUSCATE("Damage Multiplier"), &damageM, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
                 Checkbox(OBFUSCATE("God Mode"), &isGod);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
-    } else if (page == 3) {
-       page = 3; 
-	   } else if (page == 4) {
-		page = 4;
-    if (ImGui::CollapsingHeader("Configs")) {
-	
-		}
-		if (ImGui::CollapsingHeader("Menu Settings")) {
-		 //ImGui::Checkbox(OBFUSCATE("watermark"), &watermark);
-	    
-        
-		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &svaston);
-		  }
-	    Patches();
+               
+                EndTabItem();
+            }
+
+
+		//new
+            EndTabBar();
+        }
+        Patches();
+        End();
     }
 }
-}
-
-
 
 void SetupImgui() {
     IMGUI_CHECKVERSION();
