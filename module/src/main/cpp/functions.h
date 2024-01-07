@@ -1,7 +1,7 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
-void (*isGodMode)(void*, CryptoFloat);
+void (*SetSpeed)(void*, CryptoFloat);
 
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
@@ -36,6 +36,16 @@ PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
 
 // declare your hooks here
 
+    if (speed) {
+        SetSpeed(instance, CryptoFloatHook(speedplayer));
+    } else if (!speed) {
+        if (setdefaultspeed) {
+            SetSpeed(instance, CryptoFloatHook(0.18f));
+            setdefaultspeed = false;
+        }
+    }
+
+///
 void (*old_ApplyDamagePlayer)(void *instance);
 void ApplyDamagePlayer(void *instance) {
     if (instance != NULL) {
@@ -82,8 +92,8 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    isGodMode = (void(*)(void*, CryptoFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
-    //HOOK("0x12e655c", isGodMode, old_ApplyDamagePlayer);
+    SetSpeed = (void(*)(void*, CryptoFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
+    HOOK("0x12e655c", isGodMode, old_ApplyDamagePlayer);
     HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
 }
