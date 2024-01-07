@@ -67,7 +67,7 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("No kick"), &nokick);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
                 Checkbox(OBFUSCATE("God Mode"), &isGodMode);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
