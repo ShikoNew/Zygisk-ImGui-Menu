@@ -16,8 +16,9 @@ void DrawMenu()
         if (BeginTabBar("Menu", tab_bar_flags)) {
                 
            
-            if (BeginTabItem(OBFUSCATE("Account"))) {
-
+            if (BeginTabItem(OBFUSCATE("Player"))) {
+                Checkbox(OBFUSCATE("anti close"), &bypass);
+                Checkbox(OBFUSCATE("No kick"), &nokick);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplier, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
