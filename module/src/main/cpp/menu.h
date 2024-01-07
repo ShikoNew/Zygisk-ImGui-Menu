@@ -151,7 +151,7 @@ page = 2;
     
 	TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageM, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
                 Checkbox(OBFUSCATE("God Mode"), &isGod);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
