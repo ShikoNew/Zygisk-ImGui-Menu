@@ -3,7 +3,7 @@
 
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-
+float speedplayer;
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
     return String_CreateString(NULL, str);
@@ -16,6 +16,7 @@ void Pointers() {
 }
 
 void Patches() {
+    SetSpeed(instance, CryptoFloatHook(speedplayer));
     PATCH_SWITCH("0x10A69A0", "200080D2C0035FD6", showAllItems);
     PATCH_SWITCH("0xF148A4", "E07C80D2C0035FD6", freeItems);
 }
