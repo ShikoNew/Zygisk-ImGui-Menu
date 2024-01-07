@@ -61,14 +61,14 @@ void ApplyDamageEnemy(void *instance, float damage) {
 
 
    
-void (*old_ApplyDamagePlayer)(void *instance);
-void ApplyDamagePlayer(void *instance) {
+void (*old_ApplyDamagePlaye)(void *instance);
+void ApplyDamagePlaye(void *instance) {
     if (instance != NULL) {
         if (isGod) {
             return;
         }
     }
-    return old_ApplyDamagePlayer(instance);
+    return old_ApplyDamagePlaye(instance);
 }
 void (*old_ApplyDamageEnemy)(void *instance, int damage);
 void ApplyDamageEnemy(void *instance, int damage) {
