@@ -16,6 +16,16 @@ void Pointers() {
 }
 
 void Patches() {
+    PATCH_SWITCH("0xe38d5c", "C0035FD6", bypass);
+    PATCH_SWITCH("0x10e2af8", "C0035FD6", bypass);
+PATCH_SWITCH("0xeb85d8", "C0035FD6", bypass);
+    PATCH_SWITCH("0x10bdecc", "C0035FD6", bypass);
+PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
+    PATCH_SWITCH("0x18b6c04", "C0035FD6", nokick);
+ PATCH_SWITCH("0x18b78e8", "C0035FD6", nokick);
+    PATCH_SWITCH("0x18b7a60", "C0035FD6", nokick);
+    PATCH_SWITCH("0x18ba094", "C0035FD6", nokick);
+    ////
     PATCH_SWITCH("0x10A69A0", "200080D2C0035FD6", showAllItems);
     PATCH_SWITCH("0xF148A4", "E07C80D2C0035FD6", freeItems);
 }
