@@ -71,7 +71,7 @@ HOOKAF(void, Input, void *thiz, void *ex_ab, void *ex_ac)
 }
 
 //#include "functions.h"
-#include "menu.h"
+//#include "menu.h"
 
 void *hack_thread(void *arg) {
     do {
