@@ -66,7 +66,7 @@ void ApplyDamageEnemy(void *instance, float damage) {
    //         return;
     //    }
  //   }
-    return old_ApplyDamagePlayer(instance);
+   // return old_ApplyDamagePlayer(instance);
 //}
 //void (*old_ApplyDamageEnemy)(void *instance, int damage);
 //void ApplyDamageEnemy(void *instance, int damage) {
