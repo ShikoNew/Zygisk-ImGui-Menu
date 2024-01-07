@@ -3,7 +3,7 @@
 
 // here you can define variables for the patches
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-float speedplayer;
+bool isGodMode; int damageMultiplier = 1;
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
     return String_CreateString(NULL, str);
@@ -16,7 +16,22 @@ void Pointers() {
 }
 
 void Patches() {
-    SetSpeed(instance, CryptoFloatHook(speedplayer));
+    void (*old_ApplyDamagePlayer)(void* instance);
+void ApplyDamagePlayer(void instance) {
+    if (instance != NULL) {
+        if (isGodMode) {
+            return;
+        }
+    }
+    return old_ApplyDamagePlayer(instance);
+}
+void (*old_ApplyDamageEnemy)(void* instance, int damage);
+void ApplyDamageEnemy(void instance, int damage) {
+    if (instance != NULL) {
+        damage *= damageMultiplier;
+    }
+    return old_ApplyDamageEnemy(instance, damage);
+}
     PATCH_SWITCH("0x10A69A0", "200080D2C0035FD6", showAllItems);
     PATCH_SWITCH("0xF148A4", "E07C80D2C0035FD6", freeItems);
 }
