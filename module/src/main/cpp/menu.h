@@ -8,14 +8,14 @@ void DrawMenu()
 {
     
 
-	const ImVec2 window_size = ImVec2(900, 800);
+	const ImVec2 window_size = ImVec2(1000, 900);
     const char* window_title = "Nazi - Menu [x64_x32]";
 	
 //wtff
 	
 	///wtff
 		
-    const char* name = "Shiden x Nigga";
+    const char* name = "By nazi menu";
     const char* version = "v1.0";
     
     // Begin the main menu window
@@ -28,7 +28,7 @@ void DrawMenu()
 		    {
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Creator : %s",name);
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
-        ImGui::Text("FPS : %.3f ms (%.1f)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        Text("FPS : %.3f ms (%.1f)", 1000.0f / GetIO().Framerate, GetIO().Framerate);
     
 		
         
