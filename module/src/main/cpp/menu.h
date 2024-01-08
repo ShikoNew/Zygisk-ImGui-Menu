@@ -84,6 +84,7 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
                 Checkbox(OBFUSCATE("Free Items"), &freeItems);
                 Checkbox(OBFUSCATE("Show Items"), &showAllItems);
+	    }
                 EndTabItem();
 	    }
 		
