@@ -13,6 +13,7 @@ float speedplayer;
 bool speed;
 bool oniceb;
 bool isPremium;
+bool setdefaultspeed;
 
 
 
