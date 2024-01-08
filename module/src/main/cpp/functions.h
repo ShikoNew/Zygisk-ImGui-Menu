@@ -23,7 +23,7 @@ monoString *CreateIl2cppString(const char *str) {
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
 void Pointers() {
-    PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0xE7AADC")));
+    PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
 }
 
 void Patches() {
@@ -109,8 +109,8 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 void Hooks() {
     HOOK("0x12cdfd0", GodMode, old_GodMode);
-    HOOK("0x12e655c", SetSpeed, old_SetSpeed);
-    HOOK("", Backend, old_Backend);
+    HOOK("0x12a4120", SetSpeed, old_SetSpeed);
+    HOOK("0xe0c35c", Backend, old_Backend);
     HOOK("", ProductDefinition, old_ProductDefinition);
 }
 
