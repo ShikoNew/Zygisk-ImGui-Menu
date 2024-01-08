@@ -42,11 +42,13 @@ void SetupImgui() {
     IMGUI_CHECKVERSION();
     CreateContext();
     ImGuiIO &io = GetIO();
-    io.DisplaySize = ImVec2((float) glWidth, (float) glHeight);
-    ImGui_ImplOpenGL3_Init("#version 100");
-    StyleColorsDark();
-    GetStyle().ScaleAllSizes(7.0f);
-    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 30, 30.0f);
+    io.DisplaySize = ImVec2(glWidth, glHeight);        
+    ImGui_ImplOpenGL3_Init(OBFUSCATE("#version 100 es"));
+    ImGui_ImplAndroid_Init(NULL);
+    StyleColorsClassic();
+            ImFontConfig font_cfg;
+    font_cfg.SizePixels = 48.0f;
+    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 43, 43.0f);
 }
 
 
