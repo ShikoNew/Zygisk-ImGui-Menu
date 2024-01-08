@@ -31,7 +31,7 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
-#define GamePackageName "com.kitkagames.fallbuddies" // define the game package name here please
+#define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
 
 int glHeight, glWidth;
 
