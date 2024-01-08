@@ -24,6 +24,25 @@ monoString *CreateIl2cppString(const char *str) {
 
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
+struct CryptoBool {
+    unsigned char a;
+    unsigned char b;
+    bool c;
+};
+
+struct CryptoInt {
+    int a;
+    int b;
+    bool c;
+};
+
+struct ObscuredFloat {
+    int a;
+    int b;
+    bool c;
+};
+
+
 struct ObscuredInt{
     int cryptoKey;
     int currentCryptoKey;
