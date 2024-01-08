@@ -29,36 +29,15 @@ void DrawMenu()
 }
 
 void SetupImgui() {
-        // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
-
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
-
-    io.DisplaySize = ImVec2((float)glWidth, (float)glHeight);
-
-    // Setup Dear ImGui style
-    // Setup Platform/Renderer backends
+    CreateContext();
+    ImGuiIO &io = GetIO();
+    io.DisplaySize = ImVec2((float) glWidth, (float) glHeight);
     ImGui_ImplOpenGL3_Init("#version 100");
-        ImFontConfig font_cfg2;
-        font_cfg2.SizePixels = 30.f; 
-        font_cfg2.GlyphRanges = io.Fonts->GetGlyphRangesCyrillic();
-        io.Fonts->AddFontFromMemoryTTF(&Font, sizeof Font, 30.f,&font_cfg2);
-        ImFontConfig font_cfg;
-        font_cfg.MergeMode = true;
-        static const ImWchar icon_ranges[] = {ICON_MIN_FA, ICON_MAX_FA, 0x0};
-        io.Fonts->AddFontFromMemoryCompressedBase85TTF(FontAwesome6_compressed_data_base85, 33.0f, &font_cfg, icon_ranges);
-        SetBlackGoldTheme();
-        
-        //        io.SetBlackGoldTheme->AddFontFromMemoryCompressedBase85TTF(FontAwesome6_compressed_data_base85, 30.f, &font_cfg, icon_ranges);
-           /*/ImFontConfig font_cfg4;
-        font_cfg4.SizePixels = 36;
-        font_cfg4.GlyphRanges = io.Fonts->GetGlyphRangesCyrillic();
-        Func = io.Fonts->AddFontFromMemoryTTF(&Font, sizeof Font, 3/6,&font_cfg4);/*/
-        
-        ImGui::GetStyle().ScaleAllSizes(3.0f);
-        
-}
+    StyleColorsClassic();
+    GetStyle().ScaleAllSizes(4.0f);
+    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 30, 30.0f);
+      }
 
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
 EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
