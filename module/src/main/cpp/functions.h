@@ -74,7 +74,16 @@ void SetSpeed(void *instance, int damage) {
     return SetSpeed(instance, damage);
 }
 
+//ammo
 
+void (*old_get_Ammo)(void *instance, int ammo);
+void get_Ammo(void *instance, int ammo) {
+    if (instance != NULL) {
+        ammo *= ammo1;
+    }
+    return get_Ammo(instance, ammo);
+}
+//amooo
 void (*old_Backend)(void *instance);
 void Backend(void *instance) {
     if (instance != NULL) {
