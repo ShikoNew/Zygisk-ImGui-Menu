@@ -84,7 +84,6 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
                 Checkbox(OBFUSCATE("Free Items"), &freeItems);
                 Checkbox(OBFUSCATE("Show Items"), &showAllItems);
-	    }
                 EndTabItem();
 	    }
 		
@@ -110,7 +109,7 @@ if (BeginTabItem(OBFUSCATE("Player2"))) {
         Patches();
         End();
     }
-
+}
 
 void SetupImgui() {
     IMGUI_CHECKVERSION();
