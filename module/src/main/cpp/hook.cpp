@@ -24,6 +24,9 @@
 #include "Include/Unity.h"
 #include "Misc.h"
 #include "hook.h"
+#include "ImGui/Font.h"
+#include "ImGui/Icon.h"
+#include "ImGui/Iconcpp.h"
 #include "Include/Roboto-Regular.h"
 #include <iostream>
 #include <chrono>
