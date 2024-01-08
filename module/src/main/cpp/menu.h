@@ -1,7 +1,8 @@
+#pragma once
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 using namespace ImGui;
-
+bool tes1;
 void DrawMenu()
 {
     static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -12,6 +13,10 @@ void DrawMenu()
         if (BeginTabBar("Menu", tab_bar_flags)) {
             if (BeginTabItem(OBFUSCATE("Main"))) {
                 Checkbox(OBFUSCATE("Test"), &test);
+                if (Button(OBFUSCATE(ICON_FA_EYE"Add Skins"))) {
+                    // code for button action
+                    tes1 = true;
+                }
                 EndTabItem();
             }
             EndTabBar();
