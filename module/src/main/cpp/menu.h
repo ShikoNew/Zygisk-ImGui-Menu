@@ -86,6 +86,8 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("Show Items"), &showAllItems);
                 EndTabItem();
 	    }
+		EndTabBar();
+	}
 	
 		//new
 
@@ -93,8 +95,8 @@ void DrawMenu()
 if (BeginTabItem(OBFUSCATE("Player"))) {
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
-                SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
-                Checkbox(OBFUSCATE("God Mode"), &isGod);
+                //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
+             //   Checkbox(OBFUSCATE("God Mode"), &isGod);
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
                
