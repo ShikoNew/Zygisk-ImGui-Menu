@@ -56,7 +56,6 @@ void SetupImgui() {
         io.Fonts->AddFontDefault(&font_cfg);
 		
         ImGui::GetStyle().ScaleAllSizes(3.0f);
-        egl.setup = true;
 }
 
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
