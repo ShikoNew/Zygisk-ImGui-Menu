@@ -13,7 +13,7 @@ float jumpfloat;
 float speedplayer;
 bool speed;
 
-
+void (*PurchaseRealMoney)(void*, float);
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
