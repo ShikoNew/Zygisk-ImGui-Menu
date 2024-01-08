@@ -96,17 +96,7 @@ page = 1;
 page = 2;
     if(ImGui::CollapsingHeader("Speed"))
 	
-    {Checkbox(OBFUSCATE("Speed Ice"), &oniceb);
-                    if (Checkbox(OBFUSCATE("Player Speed"), &speed)){
-                        if (!speed){
-                            setdefaultspeed = true;
-                        }
-                    }
-                    if (isPremium){
-                        SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 3);
-                    } else {
-                        SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
-		    }} // min = 1, max = 100}
+    {SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);} // min = 1, max = 100}
 	if(ImGui::CollapsingHeader("Sandbox"))
 			{}
     } else if (page == 3) {
