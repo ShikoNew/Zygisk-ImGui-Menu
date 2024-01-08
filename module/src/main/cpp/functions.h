@@ -108,8 +108,8 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 void Hooks() {
     HOOK("0x12e655c", SetSpeed, old_SetSpeed);
-    HOOK("0x1ed0464", Backend, old_Backend);
-    HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
+    HOOK("", Backend, old_Backend);
+    HOOK("", ProductDefinition, old_ProductDefinition);
 }
 
 #endif //ZYCHEATS_SGUYS_FUNCTIONS_H
