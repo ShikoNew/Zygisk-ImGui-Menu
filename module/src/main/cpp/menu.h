@@ -2,25 +2,98 @@
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 using namespace ImGui;
-bool tes1;
+static int page = 1;
 void DrawMenu()
 {
-    static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    {
-        SetNextWindowSize(ImVec2(1270, 750), ImGuiCond_FirstUseEver);
-        Begin(OBFUSCATE("B3ST SQU4D"));
-        ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_FittingPolicyResizeDown;
-        if (BeginTabBar("Menu", tab_bar_flags)) {
-            if (BeginTabItem(OBFUSCATE("Main"))) {
-                Checkbox(OBFUSCATE("Test"), &test);
-                if (Button(OBFUSCATE(ICON_FA_EYE"Add Skins"))) {
-                    // code for button action
-                    tes1 = true;
-                }
-                EndTabItem();
-            }
-            EndTabBar();
+    styl();
+
+	const ImVec2 window_size = ImVec2(900, 800);
+    const char* window_title = "Nazi - Menu [x64_x32]";
+	
+//wtff
+	
+	///wtff
+		
+    const char* name = "Shiden x Nigga";
+    const char* version = "v1.0";
+    
+    // Begin the main menu window
+   ImGui::SetNextWindowSize(window_size);
+   if (ImGui::Begin(window_title, nullptr))
+
+	
+    ImGui::SetNextWindowSize(window_size);
+    if (ImGui::Begin(window_title, nullptr)) 
+		    {
+        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Creator : %s",name);
+        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
+        ImGui::Text("FPS : %.3f ms (%.1f)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+    
+		
+        
+        
+        ImVec2 cursor_pos = ImGui::GetCursorScreenPos();
+        ImGui::GetWindowDrawList()->AddLine(cursor_pos,
+        ImVec2(cursor_pos.x + ImGui::GetContentRegionAvail().x, cursor_pos.y),
+        ImGui::GetColorU32(ImGuiCol_Text));
+        ImGui::Spacing();
+    }
+    
+        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(190,50)))
+        {
+            page = 1;
         }
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(190,50)))
+        {
+            page = 2;
+        }
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(190,50)))
+        {
+            page = 3;
+        }
+		ImGui::SameLine();
+        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(190,50)))
+        {
+            page = 4;
+        }
+        
+		ImGui::Spacing();
+    
+
+
+    if (page == 1) {
+page = 1;
+        if(ImGui::CollapsingHeader("Player"))
+			{}
+        if(ImGui::CollapsingHeader("View"))
+			{}
+		
+    } else if (page == 2) {
+page = 2;
+    if(ImGui::CollapsingHeader("Funny"))
+			{}
+	if(ImGui::CollapsingHeader("Sandbox"))
+			{}
+    } else if (page == 3) {
+       page = 3; 
+	   if(ImGui::CollapsingHeader("menu size"))
+			{}
+			if(ImGui::CollapsingHeader("random"))
+			{}
+	   } else if (page == 4) {
+		page = 4;
+    if (ImGui::CollapsingHeader("Configs")) {
+	
+		}
+		if (ImGui::CollapsingHeader("Menu Settings")) {
+		 //ImGui::Checkbox(OBFUSCATE("watermark"), &watermark);
+	    
+        
+		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &svaston);
+		  }
+    }
         Pointers();
         Hooks();
         Patches();
