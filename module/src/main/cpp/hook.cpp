@@ -1,4 +1,3 @@
-#pragma once
 #include <cstring>
 #include <cstdio>
 #include <unistd.h>
@@ -25,6 +24,8 @@
 #include "Include/Unity.h"
 #include "Misc.h"
 #include "hook.h"
+#include "Icon.h"
+#include "Iconcpp.h"
 #include "Include/Roboto-Regular.h"
 #include <iostream>
 #include <chrono>
@@ -32,8 +33,6 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
-#include "Icon.h"
-#include "Iconcpp.h"
 #define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
 
 int glHeight, glWidth;
