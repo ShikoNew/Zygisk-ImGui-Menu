@@ -62,14 +62,14 @@ PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
 
 
    
-void (*old_Setjump)(void *instance);
-void Setjump(void *instance) {
+void (*old_GodMode)(void *instance);
+void GodMode(void *instance) {
     if (instance != NULL) {
         if (isGod) {
             return;
         }
     }
-    return old_Setjump(instance);
+    return old_GodMode(instance);
 }
 void (*old_SetSpeed)(void *instance, int damage);
 void SetSpeed(void *instance, int damage) {
@@ -108,6 +108,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
+    HOOK("0x12cdfd0", GodMode, old_GodMode);
     HOOK("0x12e655c", SetSpeed, old_SetSpeed);
     HOOK("", Backend, old_Backend);
     HOOK("", ProductDefinition, old_ProductDefinition);
