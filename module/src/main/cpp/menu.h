@@ -26,12 +26,14 @@ void DrawMenu()
 void SetupImgui() {
     IMGUI_CHECKVERSION();
     CreateContext();
-    ImGuiIO &io = GetIO();
-    io.DisplaySize = ImVec2((float) glWidth, (float) glHeight);
-    ImGui_ImplOpenGL3_Init("#version 100");
+     ImGuiIO &io = GetIO();
+    io.DisplaySize = ImVec2(glWidth, glHeight);        
+    ImGui_ImplOpenGL3_Init(OBFUSCATE("#version 300 es"));
+    ImGui_ImplAndroid_Init(NULL);
     StyleColorsClassic();
-    GetStyle().ScaleAllSizes(4.0f);
-    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 30, 30.0f);
+            ImFontConfig font_cfg;
+    font_cfg.SizePixels = 48.0f;
+    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 43, 43.0f);
 }
 
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
