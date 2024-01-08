@@ -31,12 +31,32 @@ void DrawMenu()
 void SetupImgui() {
     IMGUI_CHECKVERSION();
     CreateContext();
-    ImGuiIO &io = GetIO();
-    io.DisplaySize = ImVec2((float) glWidth, (float) glHeight);
-    ImGui_ImplOpenGL3_Init("#version 100");
-    StyleColorsClassic();
-    GetStyle().ScaleAllSizes(4.0f);
-    io.Fonts->AddFontFromMemoryTTF(Roboto_Regular, 30, 30.0f);
+        ImGuiIO &io = ImGui::GetIO();
+        io.DisplaySize = ImVec2(egl.width, egl.height);        
+        ImGui_ImplOpenGL3_Init(OBFUSCATE("#version 300 es"));
+        ImGui_ImplAndroid_Init(NULL);
+       ImGui::StyleColorsClassic();
+    io.ConfigWindowsMoveFromTitleBarOnly = true; 
+        io.IniFilename = NULL;     
+        static const ImWchar icons_ranges[] = { 0xf000, 0xf3ff, 0 };
+        ImFontConfig icons_config;  
+        ImFontConfig CustomFont;
+        CustomFont.FontDataOwnedByAtlas = false;
+
+        icons_config.MergeMode = true;
+        icons_config.PixelSnapH = true;
+        icons_config.OversampleH = 2.5;
+        icons_config.OversampleV = 2.5;
+       
+        io.Fonts->AddFontFromMemoryTTF(const_cast<std::uint8_t*>(Custom), sizeof(Custom), 23.0f, &CustomFont);
+        io.Fonts->AddFontFromMemoryCompressedTTF(font_awesome_data, font_awesome_size, 25.0f, &icons_config, icons_ranges);
+        
+        ImFontConfig font_cfg;
+        font_cfg.SizePixels = 19.0f;
+        io.Fonts->AddFontDefault(&font_cfg);
+		
+        ImGui::GetStyle().ScaleAllSizes(3.0f);
+        egl.setup = true;
 }
 
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
