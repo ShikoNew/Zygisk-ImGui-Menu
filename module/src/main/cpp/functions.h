@@ -42,33 +42,33 @@ PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
 
 // declare your hooks here
 
-void (*old_ApplyDamagePlayer)(void *instance);
-void ApplyDamagePlayer(void *instance) {
-    if (instance != NULL) {
-        if (isGodMode) {
-            return;
-        }
-    }
-    return old_ApplyDamagePlayer(instance);
-}
-void (*old_ApplyDamageEnemy)(void *instance, float damage);
-void ApplyDamageEnemy(void *instance, float damage) {
-    if (instance != NULL) {
-        damage *= damageMultiplier;
-    }
-    return old_ApplyDamageEnemy(instance, damage);
-}
+//void (*old_ApplyDamagePlayer)(void *instance);
+//void ApplyDamagePlayer(void *instance) {
+  //if (instance != NULL) {
+      //  if (isGodMode) {
+    //        return;
+ //     }
+//    }
+//return old_ApplyDamagePlayer(instance);
+//}
+//void (*old_ApplyDamageEnemy)(void *instance, float damage);
+//void ApplyDamageEnemy(void *instance, float damage) {
+//    if (instance != NULL) {
+    //    damage *= damageMultiplier;
+//}
+//   return old_ApplyDamageEnemy(instance, damage);
+//}
 
 
    
-void (*old_SetSpeed)(void *instance);
-void SetSpeed(void *instance) {
+void (*old_Setjump)(void *instance);
+void Setjump(void *instance) {
     if (instance != NULL) {
         if (isGod) {
             return;
         }
     }
-    return old_SetSpeed(instance);
+    return old_Setjump(instance);
 }
 void (*old_SetSpeed)(void *instance, int damage);
 void SetSpeed(void *instance, int damage) {
@@ -107,8 +107,8 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    HOOK("0x1ecf410", isGodMode, old_ApplyDamagePlayer);
-    HOOK("0x12e655c", isGod, old_SetSpeed);
+    HOOK("0x1ecf410", ApplyDamage, old_ApplyDamage);
+    HOOK("0x12e655c", SetSpeed, old_SetSpeed);
     HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
 }
