@@ -39,6 +39,15 @@ void HunterControl(void *instance) {
     }
     return old_HunterControl(instance);
 }
+void (*SetSpeed)(void*, ObscuredFloat);
+if (speed) {
+        SetSpeed(instance, ObscuredFloatHook(speedplayer));
+    } else if (!speed) {
+        if (setdefaultspeed) {
+            SetSpeed(instance, ObscuredFloatHook(0.18f));
+            setdefaultspeed = false;
+        }
+}
 
 void Patches(){
    PATCH("0xA2F1D8", "C0035FD6");
@@ -123,6 +132,8 @@ void Hooks() {
 }
 
 void Pointers() {
+    SetSpeed = (void(*)(void*, ObscuredFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
+    
     PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     ObscuredIntHook = (ObscuredInt(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x9C8158")));
 }
