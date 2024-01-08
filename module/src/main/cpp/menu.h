@@ -29,33 +29,35 @@ void DrawMenu()
 }
 
 void SetupImgui() {
+        // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
-    CreateContext();
-        ImGuiIO &io = ImGui::GetIO();
-        io.DisplaySize = ImVec2(egl.width, egl.height);        
-        ImGui_ImplOpenGL3_Init(OBFUSCATE("#version 300 es"));
-        ImGui_ImplAndroid_Init(NULL);
-       ImGui::StyleColorsClassic();
-    io.ConfigWindowsMoveFromTitleBarOnly = true; 
-        io.IniFilename = NULL;     
-        static const ImWchar icons_ranges[] = { 0xf000, 0xf3ff, 0 };
-        ImFontConfig icons_config;  
-        ImFontConfig CustomFont;
-        CustomFont.FontDataOwnedByAtlas = false;
 
-        icons_config.MergeMode = true;
-        icons_config.PixelSnapH = true;
-        icons_config.OversampleH = 2.5;
-        icons_config.OversampleV = 2.5;
-       
-        io.Fonts->AddFontFromMemoryTTF(const_cast<std::uint8_t*>(Custom), sizeof(Custom), 23.0f, &CustomFont);
-        io.Fonts->AddFontFromMemoryCompressedTTF(font_awesome_data, font_awesome_size, 25.0f, &icons_config, icons_ranges);
-        
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO();
+
+    io.DisplaySize = ImVec2((float)glWidth, (float)glHeight);
+
+    // Setup Dear ImGui style
+    // Setup Platform/Renderer backends
+    ImGui_ImplOpenGL3_Init("#version 100");
+        ImFontConfig font_cfg2;
+        font_cfg2.SizePixels = 30.f; 
+        font_cfg2.GlyphRanges = io.Fonts->GetGlyphRangesCyrillic();
+        io.Fonts->AddFontFromMemoryTTF(&Font, sizeof Font, 30.f,&font_cfg2);
         ImFontConfig font_cfg;
-        font_cfg.SizePixels = 19.0f;
-        io.Fonts->AddFontDefault(&font_cfg);
-		
+        font_cfg.MergeMode = true;
+        static const ImWchar icon_ranges[] = {ICON_MIN_FA, ICON_MAX_FA, 0x0};
+        io.Fonts->AddFontFromMemoryCompressedBase85TTF(FontAwesome6_compressed_data_base85, 33.0f, &font_cfg, icon_ranges);
+        SetBlackGoldTheme();
+        
+        //        io.SetBlackGoldTheme->AddFontFromMemoryCompressedBase85TTF(FontAwesome6_compressed_data_base85, 30.f, &font_cfg, icon_ranges);
+           /*/ImFontConfig font_cfg4;
+        font_cfg4.SizePixels = 36;
+        font_cfg4.GlyphRanges = io.Fonts->GetGlyphRangesCyrillic();
+        Func = io.Fonts->AddFontFromMemoryTTF(&Font, sizeof Font, 3/6,&font_cfg4);/*/
+        
         ImGui::GetStyle().ScaleAllSizes(3.0f);
+        
 }
 
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
