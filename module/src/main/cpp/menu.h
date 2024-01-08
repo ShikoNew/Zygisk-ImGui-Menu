@@ -92,6 +92,7 @@ void DrawMenu()
 
 
 if (BeginTabItem(OBFUSCATE("Player2"))) {
+	SliderFloat(OBFUSCATE("Jump Higher"), &jumpfloat, 0, 0.05f);
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
