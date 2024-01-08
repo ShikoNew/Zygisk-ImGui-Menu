@@ -5,6 +5,7 @@ bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
 bool isGodMode; float damageMultiplier = 0.18f;
 bool isGod; int damageMultiplie = 1;
 bool bypass = true;
+int ammo1 = 1;
 bool nokick = true;
 float jumpfloat;
 float speedplayer;
