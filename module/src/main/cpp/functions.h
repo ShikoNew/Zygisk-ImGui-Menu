@@ -107,6 +107,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
+    damageMultiplie = (void(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
     HOOK("0x12e655c", SetSpeed, old_SetSpeed);
     HOOK("", Backend, old_Backend);
     HOOK("", ProductDefinition, old_ProductDefinition);
