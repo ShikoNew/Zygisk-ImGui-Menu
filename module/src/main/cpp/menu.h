@@ -92,7 +92,7 @@ void DrawMenu()
 		//new
 
 
-if (BeginTabItem(OBFUSCATE("Player"))) {
+if (BeginTabItem(OBFUSCATE("Player2"))) {
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 //SliderInt(OBFUSCATE("Damage Multiplier"), &damageMultiplie, 1, 100, OBFUSCATE("%d"), 0); // min = 1, max = 100
