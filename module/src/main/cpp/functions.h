@@ -9,7 +9,7 @@ bool isGodMode; float damageMultiplier = 0.18f;
 bool isGod; int damageMultiplie = 1;
 bool bypass = true;
 bool nokick = true;
-
+float jumpfloat;
 float speedplayer;
 bool speed;
 
@@ -23,7 +23,7 @@ monoString *CreateIl2cppString(const char *str) {
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
 void Pointers() {
-    PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12e655c")));
+    PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
 }
 
 void Patches() {
@@ -108,6 +108,9 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
+    if (jumpfloat >= 0.001) {
+        PurchaseRealMoney(instance, jumpfloat);
+    }
     HOOK("0x12cdfd0", GodMode, old_GodMode);
     HOOK("0x12a4120", SetSpeed, old_SetSpeed);
     HOOK("0xe0c35c", Backend, old_Backend);
