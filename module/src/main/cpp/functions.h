@@ -109,7 +109,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 void Hooks() {
     if (jumpfloat >= 0.001) {
-        PurchaseRealMoney(instance, jumpfloat);
+        PurchaseRealMoney(*instance, jumpfloat);
     }
     HOOK("0x12cdfd0", GodMode, old_GodMode);
     HOOK("0x12a4120", SetSpeed, old_SetSpeed);
