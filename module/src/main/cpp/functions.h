@@ -99,13 +99,7 @@ void GodMode(void *instance) {
     }
     return old_GodMode(instance);
 }
-void (*old_SetSpeed)(void *instance, int damage);
-void SetSpeed(void *instance, int damage) {
-    if (instance != NULL) {
-        damage *= damageMultiplie;
-    }
-    return SetSpeed(instance, damage);
-}
+
 
 //ammo
 
