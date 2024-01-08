@@ -92,7 +92,7 @@ page = 2;
 		 //ImGui::Checkbox(OBFUSCATE("watermark"), &watermark);
 	    
         
-		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &svaston);
+		ImGui::Checkbox(OBFUSCATE("custom crosshair"), &test1);
 		  }
     }
         Pointers();
