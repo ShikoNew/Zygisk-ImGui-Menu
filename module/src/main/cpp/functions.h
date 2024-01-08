@@ -62,9 +62,9 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 void (*SetSpeed)(void*, ObscuredFloat);
-if (speed) {
+if (isGodMode) {
         SetSpeed(instance, ObscuredFloatHook(speedplayer));
-    } else if (!speed) {
+    } else if (!isGodMode) {
         if (setdefaultspeed) {
             SetSpeed(instance, ObscuredFloatHook(0.18f));
             setdefaultspeed = false;
