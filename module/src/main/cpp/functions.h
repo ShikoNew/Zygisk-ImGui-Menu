@@ -9,7 +9,6 @@ bool nokick = true;
 float jumpfloat;
 float speedplayer;
 bool speed;
-bool test;
 
 
 
