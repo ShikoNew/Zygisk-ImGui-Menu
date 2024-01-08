@@ -94,8 +94,19 @@ page = 1;
 		
     } else if (page == 2) {
 page = 2;
-    if(ImGui::CollapsingHeader("Weapon"))
-			{SliderInt(OBFUSCATE("Ammo1"), &ammo1, 1, 1000, OBFUSCATE("%d"), 0);} // min = 1, max = 100}
+    if(ImGui::CollapsingHeader("Speed"))
+	
+    {Checkbox(OBFUSCATE("Speed Ice"), &oniceb);
+                    if (Checkbox(OBFUSCATE("Player Speed"), &speed)){
+                        if (!speed){
+                            setdefaultspeed = true;
+                        }
+                    }
+                    if (isPremium){
+                        SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 3);
+                    } else {
+                        SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);
+		    }} // min = 1, max = 100}
 	if(ImGui::CollapsingHeader("Sandbox"))
 			{}
     } else if (page == 3) {
