@@ -86,8 +86,7 @@ void DrawMenu()
                 Checkbox(OBFUSCATE("Show Items"), &showAllItems);
                 EndTabItem();
 	    }
-		EndTabBar();
-	}
+		
 	
 		//new
 
