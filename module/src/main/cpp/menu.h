@@ -99,7 +99,7 @@ page = 2;
         Hooks();
         Patches();
         End();
-    }
+    
 }
 
 void SetupImgui() {
