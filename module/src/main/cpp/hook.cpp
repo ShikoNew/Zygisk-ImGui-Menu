@@ -24,8 +24,6 @@
 #include "Include/Unity.h"
 #include "Misc.h"
 #include "hook.h"
-#include "Icon.h"
-#include "Iconcpp.h"
 #include "Include/Roboto-Regular.h"
 #include <iostream>
 #include <chrono>
@@ -71,7 +69,8 @@ HOOKAF(void, Input, void *thiz, void *ex_ab, void *ex_ac)
     ImGui_ImplAndroid_HandleInputEvent((AInputEvent *)thiz);
     return;
 }
-
+#include "Icon.h"
+#include "Iconcpp.h"
 #include "functions.h"
 #include "menu.h"
 
