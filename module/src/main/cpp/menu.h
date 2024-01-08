@@ -2,10 +2,11 @@
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 using namespace ImGui;
+bool svaston;
 static int page = 1;
 void DrawMenu()
 {
-    styl();
+    
 
 	const ImVec2 window_size = ImVec2(900, 800);
     const char* window_title = "Nazi - Menu [x64_x32]";
