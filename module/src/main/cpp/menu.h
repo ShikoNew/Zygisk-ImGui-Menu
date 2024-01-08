@@ -95,7 +95,7 @@ page = 1;
     } else if (page == 2) {
 page = 2;
     if(ImGui::CollapsingHeader("Weapon"))
-			{SliderInt(OBFUSCATE("Ammo1"), &ammo1, 1, 1000, OBFUSCATE("%d"), 0); // min = 1, max = 100}
+			{SliderInt(OBFUSCATE("Ammo1"), &ammo1, 1, 1000, OBFUSCATE("%d"), 0);} // min = 1, max = 100}
 	if(ImGui::CollapsingHeader("Sandbox"))
 			{}
     } else if (page == 3) {
