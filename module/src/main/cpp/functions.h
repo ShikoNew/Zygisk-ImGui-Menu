@@ -105,6 +105,10 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 void Hooks() {
     HOOK("0x982200", HunterControl, old_HunterControl);
+    HOOK("0x12cdfd0", GodMode, old_GodMode);
+    HOOK("0x12a4120", SetSpeed, old_SetSpeed);
+    HOOK("0xe0c35c", Backend, old_Backend);
+    HOOK("", ProductDefinition, old_ProductDefinition);
 }
 
 void Pointers() {
