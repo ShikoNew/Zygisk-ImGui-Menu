@@ -12,8 +12,18 @@ bool nokick = true;
 float jumpfloat;
 float speedplayer;
 bool speed;
+bool test;
 
-void (*PurchaseRealMoney)(void*, float);
+struct ObscuredInt{
+    int cryptoKey;
+    int currentCryptoKey;
+    int hiddenValue;
+    bool inited;
+    int fakeValue;
+    bool fakeValueActive;
+};
+
+
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
@@ -23,10 +33,27 @@ monoString *CreateIl2cppString(const char *str) {
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
 void Pointers() {
+ ObscuredIntHook = (ObscuredInt(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x9C8158")));
     PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
 }
 
+
+ObscuredInt (*ObscuredIntHook)(int);
+
+void (*old_HunterControl)(void *instance);
+void HunterControl(void *instance) {
+    void *Hunter = *(void**)((uint64_t) instance + 0x40);
+    if (test){
+        *(ObscuredInt*)((uint64_t)Hunter + 0xB0) = ObscuredIntHook(99999);
+    }
+    return old_HunterControl(instance);
+}
+
+
+
 void Patches() {
+    PATCH("0xA2F1D8", "C0035FD6");
+    PATCH("0xA2F494", "C0035FD6");
     PATCH_SWITCH("0xe38d5c", "C0035FD6", bypass);
     PATCH_SWITCH("0x10e2af8", "C0035FD6", bypass);
 PATCH_SWITCH("0xeb85d8", "C0035FD6", bypass);
@@ -108,9 +135,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    if (jumpfloat >= 0.001) {
-        PurchaseRealMoney(*instance, jumpfloat);
-    }
+  HOOK("0x982200", HunterControl, old_HunterControl);
     HOOK("0x12cdfd0", GodMode, old_GodMode);
     HOOK("0x12a4120", SetSpeed, old_SetSpeed);
     HOOK("0xe0c35c", Backend, old_Backend);
