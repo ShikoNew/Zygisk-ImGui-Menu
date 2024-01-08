@@ -107,7 +107,6 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 }
 
 void Hooks() {
-    HOOK("0x1ecf410", ApplyDamage, old_ApplyDamage);
     HOOK("0x12e655c", SetSpeed, old_SetSpeed);
     HOOK("0x1ed0464", Backend, old_Backend);
     HOOK("0x12cdfd0", ProductDefinition, old_ProductDefinition);
