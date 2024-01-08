@@ -9,7 +9,6 @@ bool bypass = true;
 int ammo1 = 1;
 bool nokick = true;
 float jumpfloat;
-float speedplayer;
 bool speed;
 bool oniceb;
 bool isPremium;
