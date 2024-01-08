@@ -110,7 +110,7 @@ if (BeginTabItem(OBFUSCATE("Player"))) {
         Patches();
         End();
     }
-}
+
 
 void SetupImgui() {
     IMGUI_CHECKVERSION();
