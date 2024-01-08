@@ -31,7 +31,7 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
-#define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
+#define GamePackageName "com.kitkagames.fallbuddies" // define the game package name here please
 
 int glHeight, glWidth;
 
@@ -69,8 +69,7 @@ HOOKAF(void, Input, void *thiz, void *ex_ab, void *ex_ac)
     ImGui_ImplAndroid_HandleInputEvent((AInputEvent *)thiz);
     return;
 }
-#include "Icon.h"
-#include "Iconcpp.h"
+
 #include "functions.h"
 #include "menu.h"
 
