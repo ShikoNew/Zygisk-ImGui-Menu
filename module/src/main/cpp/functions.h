@@ -12,6 +12,7 @@ bool nokick = true;
 
 float speedplayer;
 bool speed;
+void (*damageMultiplie)(int);
 
 
 monoString *CreateIl2cppString(const char *str) {
