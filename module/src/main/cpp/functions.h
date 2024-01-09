@@ -2,7 +2,7 @@
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
 #include "BoolFloatEtc.h"
-#include "MenuTool.h"
+
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
