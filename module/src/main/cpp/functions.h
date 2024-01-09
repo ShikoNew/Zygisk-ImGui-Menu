@@ -1,10 +1,8 @@
-#pragma once
-#define ZYCHEATS_Struct
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
 #include "BoolFloatEtc.h"
-
+#incluse "Include/curl/"
 
 monoString *CreateIl2cppString(const char *str) {
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString*(*)(void*, const char*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x2596B20")));
