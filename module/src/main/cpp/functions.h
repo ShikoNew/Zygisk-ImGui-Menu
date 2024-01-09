@@ -13,9 +13,7 @@ bool speed;
 bool oniceb;
 bool isPremium;
 bool setdefaultspeed;
-CryptoBool (*CryptoBoolHook)(bool);
-CryptoInt (*CryptoIntHook)(int);
-CryptoFloat (*CryptoFloatHook)(float);
+
 
 
 monoString *CreateIl2cppString(const char *str) {
@@ -53,6 +51,9 @@ struct ObscuredInt{
     bool fakeValueActive;
 };
 
+CryptoBool (*CryptoBoolHook)(bool);
+CryptoInt (*CryptoIntHook)(int);
+CryptoFloat (*CryptoFloatHook)(float);
 ObscuredInt (*ObscuredIntHook)(int);
 
 void (*old_HunterControl)(void *instance);
