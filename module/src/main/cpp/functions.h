@@ -62,9 +62,9 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
-void (*SetSpeed)(void*, float);
-    if (SetSpeed >= 0.001) {
-        SetSpeed(instance, SetSpeed);
+void (*OnTrampoline)(void*, float);
+    if (jumpfloat >= 0.001) {
+        OnTrampoline(instance, jumpfloat);
     }
 
 void Patches(){
@@ -143,8 +143,7 @@ void Hooks() {
 }
 
 void Pointers() {
-    SetSpeed = (void(*)(void*, ObscuredFloat)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
-    
+    OnTrampoline = (void(*)(void*,float)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     ObscuredIntHook = (ObscuredInt(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x9C8158")));
 }
