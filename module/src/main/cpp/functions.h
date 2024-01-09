@@ -29,6 +29,39 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
+void cyl() { if (m16rn==0){
+        ImGui::StyleColorsDark();
+        }
+        if(m16rn==1){
+			const ImVec2 window_size = ImVec2(1000, 700);
+            Stupid();
+        }
+        if(m16rn==2){
+            InitStyle();
+        }
+        if(m16rn==3){
+            styl();
+        }
+        if(m16rn==4){
+            
+        }}
+
+void cyl2() { if (sizer==0){
+        ImGui::StyleColorsDark();
+        }
+        if(sizer==1){
+			const ImVec2 window_size = ImVec2(1000, 700);
+            Stupid();
+        }
+        if(sizer==2){
+            InitStyle();
+        }
+        if(sizer==3){
+            styl();
+        }
+        if(sizer==4){
+            
+        }}
 
 void Patches(){
    PATCH("0xA2F1D8", "C0035FD6");
