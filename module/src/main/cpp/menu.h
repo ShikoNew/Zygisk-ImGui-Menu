@@ -96,7 +96,7 @@ page = 1;
 page = 2;
     if(ImGui::CollapsingHeader("Speed"))
 	
-    {SliderFloat(OBFUSCATE("Speed"), &speedplayer, 0.1, 0.5);} // min = 1, max = 100}
+    {SliderFloat(OBFUSCATE("Speed"), &jump, 0.1, 0.5);} // min = 1, max = 100}
 	if(ImGui::CollapsingHeader("Sandbox"))
 			{}
     } else if (page == 3) {
