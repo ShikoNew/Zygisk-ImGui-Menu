@@ -96,7 +96,7 @@ page = 1;
 page = 2;
     if(ImGui::CollapsingHeader("Speed"))
 	
-    {Checkbox(OBFUSCATE("God Mode"), &Gud);} // min = 1, max = 100}
+    {Checkbox(OBFUSCATE("God Mode"), &godmode);} // min = 1, max = 100}
 	if(ImGui::CollapsingHeader("Sandbox"))
 			{}
     } else if (page == 3) {
