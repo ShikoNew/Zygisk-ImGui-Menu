@@ -35,7 +35,7 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
-#define GamePackageName "com.hitrock.hideonline" // define the game package name here please
+#define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
 
 int glHeight, glWidth;
 
