@@ -1,6 +1,7 @@
+#pragma once
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
-#pragma once
+
 #include "BoolFloatEtc.h"
 
 
