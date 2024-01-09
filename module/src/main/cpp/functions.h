@@ -13,7 +13,9 @@ bool speed;
 bool oniceb;
 bool isPremium;
 bool setdefaultspeed;
-
+CryptoBool (*CryptoBoolHook)(bool);
+CryptoInt (*CryptoIntHook)(int);
+CryptoFloat (*CryptoFloatHook)(float);
 
 
 monoString *CreateIl2cppString(const char *str) {
@@ -95,7 +97,7 @@ CryptoBool (*old_ammo)(void*);
 CryptoBool ammo(void* instance) {
     if (godmode) {
         if (PlayerInputInstance != nullptr) {
-            return CryptoBool(true);
+            return CryptoBoolHook(true);
         }
     }
     return old_ammo(instance);
