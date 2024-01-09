@@ -1,7 +1,7 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
-
+#include "BoolFloatEtc.h"
 #include "MenuTool.h"
 
 monoString *CreateIl2cppString(const char *str) {
