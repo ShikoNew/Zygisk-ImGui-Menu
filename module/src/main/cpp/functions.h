@@ -63,7 +63,7 @@ void HunterControl(void *instance) {
 }
 
 void (*OnTrampoline)(void*, float);
-    if (jumpfloat >= 0.001) {
+    (jumpfloat >= 0.001) {
         OnTrampoline(instance, jumpfloat);
     }
 
