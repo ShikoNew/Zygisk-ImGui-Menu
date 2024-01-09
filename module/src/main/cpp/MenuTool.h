@@ -1,3 +1,10 @@
+#ifndef ZYCHEATS_Struct
+#define ZYCHEATS_Struct
+
+
+///bugg
+
+
 struct CryptoBool {
     unsigned char a;
     unsigned char b;
@@ -25,3 +32,4 @@ struct ObscuredInt{
     int fakeValue;
     bool fakeValueActive;
 };
+#endif
