@@ -56,15 +56,7 @@ CryptoInt (*CryptoIntHook)(int);
 CryptoFloat (*CryptoFloatHook)(float);
 ObscuredInt (*ObscuredIntHook)(int);
 
-void* PlayerInputInstance;
-void (*old_PlayerInput)(void *instance);
-void PlayerInput(void *instance) {
-    void *manager = *(void**)((uint64_t)instance + 0x158);
-    void *controller = *(void**)((uint64_t)instance + 0xa8);
-    void *character = *(void**)((uint64_t) controller + 0x78);
-    void *cam = *(void**)((uint64_t) instance + 0x140);
-    void *cam2 = *(void**)((uint64_t) instance + 0x148);
-    PlayerInputInstance = instance;
+
 
 void (*old_HunterControl)(void *instance);
 void HunterControl(void *instance) {
@@ -85,7 +77,7 @@ PATCH_SWITCH("0xeb85d8", "C0035FD6", bypass);
     PATCH_SWITCH("0x10bdecc", "C0035FD6", bypass);
 PATCH_SWITCH("0x10c1894", "C0035FD6", bypass);
     PATCH_SWITCH("0x18b6c04", "C0035FD6", nokick);
- PATCH_SWITCH("0x18b78e8", "C0035FD6", nokick);
+ PATCH_SWITCH("0x1b78e8", "C0035FD6", nokick);
     PATCH_SWITCH("0x18b7a60", "C0035FD6", nokick);
     PATCH_SWITCH("0x18ba094", "C0035FD6", nokick);
     ////
@@ -104,15 +96,7 @@ void GodMode(void *instance) {
     return old_GodMode(instance);
 }
 
-CryptoBool (*old_ammo)(void*);
-CryptoBool ammo(void* instance) {
-    if (godmode) {
-        if (PlayerInputInstance != nullptr) {
-            return CryptoBoolHook(true);
-        }
-    }
-    return old_ammo(instance);
-}
+
 
 //ammo
 
