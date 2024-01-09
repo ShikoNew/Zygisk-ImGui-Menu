@@ -56,6 +56,16 @@ CryptoInt (*CryptoIntHook)(int);
 CryptoFloat (*CryptoFloatHook)(float);
 ObscuredInt (*ObscuredIntHook)(int);
 
+void* PlayerInputInstance;
+void (*old_PlayerInput)(void *instance);
+void PlayerInput(void *instance) {
+    void *manager = *(void**)((uint64_t)instance + 0x158);
+    void *controller = *(void**)((uint64_t)instance + 0xa8);
+    void *character = *(void**)((uint64_t) controller + 0x78);
+    void *cam = *(void**)((uint64_t) instance + 0x140);
+    void *cam2 = *(void**)((uint64_t) instance + 0x148);
+    PlayerInputInstance = instance;
+
 void (*old_HunterControl)(void *instance);
 void HunterControl(void *instance) {
     void *Hunter = *(void**)((uint64_t) instance + 0x40);
