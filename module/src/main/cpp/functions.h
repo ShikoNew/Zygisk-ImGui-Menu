@@ -2,7 +2,7 @@
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 bool test;
 bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-bool isGodMode; float damageMultiplier = 0.18f;
+bool godmode; float damageMultiplier = 0.18f;
 bool isGod; int damageMultiplie = 1;
 float speedplayer = 0.18f;
 bool bypass = true;
