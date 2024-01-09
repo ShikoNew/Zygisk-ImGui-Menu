@@ -1,18 +1,6 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
-bool test;
-bool addCurrency, freeItems, everythingUnlocked, showAllItems, addSkins;
-bool godmode; float damageMultiplier = 0.18f;
-bool isGod; int damageMultiplie = 1;
-float speedplayer = 0.18f;
-bool bypass = true;
-int ammo1 = 1;
-bool nokick = true;
-float jumpfloat;
-bool speed;
-bool oniceb;
-bool isPremium;
-bool setdefaultspeed;
+
 
 #include "MenuTool.h"
 
