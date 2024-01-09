@@ -62,9 +62,9 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
-void (*jump)(void*, float);
-    if (jump >= 0.001) {
-        SetSpeed(instance, jump);
+void (*SetSpeed)(void*, float);
+    if (SetSpeed >= 0.001) {
+        SetSpeed(instance, SetSpeed);
     }
 
 void Patches(){
