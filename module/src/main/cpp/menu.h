@@ -41,12 +41,12 @@ void DrawMenu()
         ImGui::Spacing();
     }
     
-        if (ImGui::Button(ICON_FA_USER" Visuals",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_USER" Player",ImVec2(190,50)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CODE" Skins",ImVec2(190,50)))
+        if (ImGui::Button(ICON_FA_CODE" Sandbox",ImVec2(190,50)))
         {
             page = 2;
         }
