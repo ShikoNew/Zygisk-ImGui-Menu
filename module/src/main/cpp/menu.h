@@ -16,7 +16,7 @@ void DrawMenu()
 	
 	///wtff
 		
-    const char* name = "By nazi menu";
+    const char* name = "Nazi Menu";
     const char* version = "v1.0";
     
     // Begin the main menu window
@@ -27,9 +27,9 @@ void DrawMenu()
     ImGui::SetNextWindowSize(window_size);
     if (ImGui::Begin(window_title, nullptr)) 
 		    {
-        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Creator : %s",name);
+        ImGui::TextColored(ImVec4(1, 1, 1, 1), "Menu : %s",name);
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
-        Text("FPS : %.3f ms (%.1f)", 1000.0f / GetIO().Framerate, GetIO().Framerate);
+        Text("Made by NiggerDestroyer")
     
 		
         
