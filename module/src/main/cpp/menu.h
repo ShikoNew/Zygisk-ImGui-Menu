@@ -29,7 +29,7 @@ void DrawMenu()
 		    {
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Menu : %s",name);
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
-        Text("Made by NiggerDestroyer")
+        Text("Made by NiggerDestroyer");
     
 		
         
