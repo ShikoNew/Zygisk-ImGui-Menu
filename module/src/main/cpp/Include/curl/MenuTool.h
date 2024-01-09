@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ZYCHEATS_Struct
 #define ZYCHEATS_Struct
 
