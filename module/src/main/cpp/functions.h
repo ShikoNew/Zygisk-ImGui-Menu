@@ -35,7 +35,7 @@ struct CryptoInt {
     bool c;
 };
 
-struct ObscuredFloat {
+struct CryptoFloat {
     int a;
     int b;
     bool c;
@@ -62,10 +62,6 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
-void (*OnTrampoline)(void*, float);
-    (jumpfloat >= 0.001) {
-        OnTrampoline(instance, jumpfloat);
-    }
 
 void Patches(){
    PATCH("0xA2F1D8", "C0035FD6");
@@ -143,7 +139,6 @@ void Hooks() {
 }
 
 void Pointers() {
-    OnTrampoline = (void(*)(void*,float)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     ObscuredIntHook = (ObscuredInt(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x9C8158")));
 }
