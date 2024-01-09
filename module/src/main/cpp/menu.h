@@ -75,7 +75,7 @@ page = 1;
                 SliderInt(OBFUSCATE("Speed"), &damageMultiplie, 1, 1000, OBFUSCATE("%d"), 0); // min = 1, max = 100
                 Checkbox(OBFUSCATE("God Mode"), &isGod);
 			 ImGui::CollapsingHeader("menu size"))
-				 TextUnformatted(OBFUSCATE("Select Spawn"))
+				 TextUnformatted(OBFUSCATE("Select Spawn"));
 			{ImGui::Combo(OBFUSCATE("m16"), &m16rn, m16type, IM_ARRAYSIZE(m16type));
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
