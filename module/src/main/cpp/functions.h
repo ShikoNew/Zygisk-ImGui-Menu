@@ -91,6 +91,15 @@ void GodMode(void *instance) {
     return old_GodMode(instance);
 }
 
+CryptoBool (*old_Gud)(void*);
+CryptoBool Gud(void* instance) {
+    if (godmode) {
+        if (PlayerInputInstance != nullptr) {
+            return CryptoBoolHook(true);
+        }
+    }
+    return old_Gud(instance);
+}
 
 //ammo
 
@@ -131,6 +140,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 
 void Hooks() {
+    HOOK("0x12cdfd0", gud, old_gud);
     HOOK("0x982200", HunterControl, old_HunterControl);
     HOOK("0x9F8B00", get_Ammo, old_get_Ammo);
     HOOK("0x12cdfd0", GodMode, old_GodMode);
