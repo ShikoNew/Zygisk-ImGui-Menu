@@ -1,4 +1,5 @@
 #pragma once
+#define ZYCHEATS_Struct
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
 
