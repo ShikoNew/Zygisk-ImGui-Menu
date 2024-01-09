@@ -30,21 +30,15 @@ void HunterControl(void *instance) {
 }
 
 void cyl() { if (m16rn==0){
-        ImGui::StyleColorsDark();
+        PATCH("0x16f0c8c", "33008052");
         }
         if(m16rn==1){
-			const ImVec2 window_size = ImVec2(1000, 700);
-            Stupid();
+		PATCH("0x16f0c8c", "53008052");	
         }
         if(m16rn==2){
-            InitStyle();
+            PATCH("0x16f0c8c", "F303002A");
         }
-        if(m16rn==3){
-            styl();
-        }
-        if(m16rn==4){
-            
-        }}
+       }
 
 void cyl2() { if (sizer==0){
         ImGui::StyleColorsDark();
