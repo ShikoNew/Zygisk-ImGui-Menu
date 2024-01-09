@@ -8,7 +8,7 @@ float speedplayer = 0.18f;
 bool bypass = true;
 int ammo1 = 1;
 bool nokick = true;
-float jumpfloat;
+float jump;
 bool speed;
 bool oniceb;
 bool isPremium;
