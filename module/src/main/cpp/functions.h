@@ -95,7 +95,7 @@ CryptoBool (*old_ammo)(void*);
 CryptoBool ammo(void* instance) {
     if (godmode) {
         if (PlayerInputInstance != nullptr) {
-            return CryptoBoolHook(true);
+            return CryptoBool(true);
         }
     }
     return old_ammo(instance);
