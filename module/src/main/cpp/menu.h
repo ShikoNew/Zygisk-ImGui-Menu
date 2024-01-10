@@ -43,22 +43,22 @@ void DrawMenu()
         ImGui::Spacing();
     }
     
-        if (ImGui::Button(ICON_FA_USER" Player",ImVec2(190,50)))
+        if (ImGui::Button(" Player",ImVec2(190,50)))
         {
             page = 1;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CODE" Sandbox",ImVec2(190,50)))
+        if (ImGui::Button(" Sandbox",ImVec2(190,50)))
         {
             page = 2;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_EYE" Legit",ImVec2(190,50)))
+        if (ImGui::Button(" Legit",ImVec2(190,50)))
         {
             page = 3;
         }
 		ImGui::SameLine();
-        if (ImGui::Button(ICON_FA_CIRCLE_NOTCH" Configs",ImVec2(190,50)))
+        if (ImGui::Button(" Configs",ImVec2(190,50)))
         {
             page = 4;
         }
