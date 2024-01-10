@@ -74,6 +74,7 @@ page = 1;
     
     } else if (page == 2) {
 page = 2;
+	    SliderFloat(OBFUSCATE("Jump Higher"), &jumpfloat, 0, 0.05f);
     if(ImGui::CollapsingHeader("Speed"))
 	
     {Checkbox(OBFUSCATE("God Mode"), &godmode);} // min = 1, max = 100}
