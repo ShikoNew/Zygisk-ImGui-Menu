@@ -12,7 +12,7 @@ monoString *CreateIl2cppString(const char *str) {
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
 
-
+void (*OnTrampoline)(void*, float);
 CryptoBool (*CryptoBoolHook)(bool);
 CryptoInt (*CryptoIntHook)(int);
 CryptoFloat (*CryptoFloatHook)(float);
@@ -30,6 +30,9 @@ void HunterControl(void *instance) {
 }
 
 void cyl() { if (m16rn==0){
+	if (jumpfloat >= 0.001) {
+        OnTrampoline(instance, jumpfloat);
+	}
         PATCH("0x16f0c8c", "33008052");
         }
         if(m16rn==1){
@@ -119,6 +122,7 @@ void Hooks() {
 }
 
 void Pointers() {
+	OnTrampoline = (void(*)(void*,float)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     PurchaseRealMoney = (void(*)(void*, monoString*, monoString*, void*)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x12a37fc")));
     ObscuredIntHook = (ObscuredInt(*)(int)) (g_il2cppBaseMap.startAddress + string2Offset(OBFUSCATE("0x9C8158")));
 }
