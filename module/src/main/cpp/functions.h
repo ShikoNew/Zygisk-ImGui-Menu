@@ -1,6 +1,5 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
-bool spawnobjectb;
 #include "BoolFloatEtc.h"
 #include "Include/curl/MenuTool.h"
 #include "Bar.h"
@@ -12,7 +11,7 @@ monoString *CreateIl2cppString(const char *str) {
 void (*PurchaseRealMoney) (void* instance, monoString* itemId, monoString* receipt, void* callback);
 
 
-void (*OnTrampoline)(void*, float);
+
 CryptoBool (*CryptoBoolHook)(bool);
 CryptoInt (*CryptoIntHook)(int);
 CryptoFloat (*CryptoFloatHook)(float);
@@ -29,22 +28,7 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
-void* PlayerInputInstance;
-void (*old_PlayerInput)(void *instance);
-void PlayerInput(void *instance) {
-    void *manager = *(void**)((uint64_t)instance + 0x158);
-    void *controller = *(void**)((uint64_t)instance + 0xa8);
-    void *character = *(void**)((uint64_t) controller + 0x78);
-    void *cam = *(void**)((uint64_t) instance + 0x140);
-    void *cam2 = *(void**)((uint64_t) instance + 0x148);
-    PlayerInputInstance = instance;
-    if (spawnobjectb) {
-        Instantiate(CreatePrimitive(spawnobjectint), GetPosition(GetTransform(instance)), Quaternion(0,0,0,0));
-        spawnobjectb = false;
-    }
-    if (jumpfloat >= 0.001) {
-        OnTrampoline(instance, jumpfloat);
-    }}
+
 
 
 
@@ -131,7 +115,6 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 
 void Hooks() {
-	HOOK("0x12e5d4c", PlayerInput, old_PlayerInput);
     HOOK("0x982200", HunterControl, old_HunterControl);
     HOOK("0x9F8B00", get_Ammo, old_get_Ammo);
     HOOK("0x12cdfd0", GodMode, old_GodMode);
