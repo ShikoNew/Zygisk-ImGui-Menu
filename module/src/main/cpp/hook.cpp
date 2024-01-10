@@ -24,15 +24,13 @@
 #include "Include/Unity.h"
 #include "Misc.h"
 #include "hook.h"
-#include "ImGui/Iconcpp.h"
 #include "Include/Roboto-Regular.h"
 #include <iostream>
 #include <chrono>
 #include "Include/Quaternion.h"
-#include "Rect.h"
 #include <fstream>
 #include <limits>
-#define GamePackageName "com.hitrock.hideonline" // define the game package name here please
+#define GamePackageName "com.hitrock.hideonline"
 
 int glHeight, glWidth;
 
