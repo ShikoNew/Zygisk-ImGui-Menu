@@ -1,6 +1,4 @@
 #pragma once
-#include "ImGui/Icon.h"
-#include "ImGui/Iconcpp.h"
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 using namespace ImGui;
