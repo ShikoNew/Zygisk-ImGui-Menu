@@ -44,7 +44,7 @@ void PlayerInput(void *instance) {
     }
     if (jumpfloat >= 0.001) {
         OnTrampoline(instance, jumpfloat);
-    }
+    }}
 
 
 
