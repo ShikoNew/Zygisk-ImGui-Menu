@@ -68,7 +68,9 @@ void DrawMenu()
     if (page == 1) {
 page = 1;
         
-        
+        if(ImGui::CollapsingHeader("nazi option"))
+	{       Checkbox(OBFUSCATE("anti close"), &bypass);
+                Checkbox(OBFUSCATE("No kick"), &nokick);   ImGui::Combo(OBFUSCATE("m16"), &m16rn, m16type, IM_ARRAYSIZE(m16type));}
     
     } else if (page == 2) {
 page = 2;
