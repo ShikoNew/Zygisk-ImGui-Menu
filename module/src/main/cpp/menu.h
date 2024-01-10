@@ -73,8 +73,8 @@ page = 1;
                 TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
 
                 SliderInt(OBFUSCATE("Speed"), &damageMultiplie, 1, 1000, OBFUSCATE("%d"), 0); // min = 1, max = 100
-                Checkbox(OBFUSCATE("God Mode"), &isGod);
-			 ImGui::CollapsingHeader("menu size"))
+                Checkbox(OBFUSCATE("God Mode"), &isGod);}
+			 ImGui::CollapsingHeader("menu size")){
 				 TextUnformatted(OBFUSCATE("Select Spawn"));
 			ImGui::Combo(OBFUSCATE(""), &m16rn, m16type, IM_ARRAYSIZE(m16type));
                 // here menu stuff, remove test btw
