@@ -1,8 +1,6 @@
-#pragma once
 #ifndef ZYGISK_MENU_TEMPLATE_MENU_H
 #define ZYGISK_MENU_TEMPLATE_MENU_H
 using namespace ImGui;
-#define ICON_FA_USER "\xef\x80\x87"
 bool svaston;
 static int page = 1;
 void DrawMenu()
@@ -29,7 +27,7 @@ void DrawMenu()
 		    {
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Menu : %s",name);
         ImGui::TextColored(ImVec4(1, 1, 1, 1), "Version : %s",version);
-        Text("Made by NiggerDestroyer");
+        Text("Made by NiggerDestroyer Word");
     
 		
         
