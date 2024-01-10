@@ -1,6 +1,6 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
-
+bool spawnobjectb;
 #include "BoolFloatEtc.h"
 #include "Include/curl/MenuTool.h"
 #include "Bar.h"
@@ -44,7 +44,7 @@ void PlayerInput(void *instance) {
     }
     if (jumpfloat >= 0.001) {
         OnTrampoline(instance, jumpfloat);
-}
+    }
 
 
 
@@ -131,6 +131,7 @@ void* ProductDefinition(void *instance, monoString* id, monoString* storeSpecifi
 
 
 void Hooks() {
+	HOOK("0x12e5d4c", PlayerInput, old_PlayerInput);
     HOOK("0x982200", HunterControl, old_HunterControl);
     HOOK("0x9F8B00", get_Ammo, old_get_Ammo);
     HOOK("0x12cdfd0", GodMode, old_GodMode);
