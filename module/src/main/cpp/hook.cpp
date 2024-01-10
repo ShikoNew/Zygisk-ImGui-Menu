@@ -1,4 +1,3 @@
-#pragma once
 #include <cstring>
 #include <cstdio>
 #include <unistd.h>
@@ -25,8 +24,6 @@
 #include "Include/Unity.h"
 #include "Misc.h"
 #include "hook.h"
-#include "ImGui/Font.h"
-#include "ImGui/Icon.h"
 #include "ImGui/Iconcpp.h"
 #include "Include/Roboto-Regular.h"
 #include <iostream>
@@ -35,7 +32,7 @@
 #include "Rect.h"
 #include <fstream>
 #include <limits>
-#define GamePackageName "com.rexetstudio.blockstrike" // define the game package name here please
+#define GamePackageName "com.hitrock.hideonline" // define the game package name here please
 
 int glHeight, glWidth;
 
