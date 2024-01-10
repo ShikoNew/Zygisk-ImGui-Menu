@@ -68,12 +68,37 @@ void DrawMenu()
     if (page == 1) {
 page = 1;
         
-        if(ImGui::CollapsingHeader("nazi option"))
-	{       Checkbox(OBFUSCATE("anti close"), &bypass);
-                Checkbox(OBFUSCATE("No kick"), &nokick);   ImGui::Combo(OBFUSCATE("m16"), &m16rn, m16type, IM_ARRAYSIZE(m16type));}
+        if(ImGui::CollapsingHeader("Player"))
+	{      ///
+
+Checkbox(OBFUSCATE("anti close"), &bypass);
+                Checkbox(OBFUSCATE("No kick"), &nokick);
+                TextUnformatted(OBFUSCATE("Damage Multiplier:")); // just plain text
+
+                SliderInt(OBFUSCATE("Speed"), &damageMultiplie, 1, 1000, OBFUSCATE("%d"), 0); // min = 1, max = 100
+                Checkbox(OBFUSCATE("God Mode"), &isGod);
+                // here menu stuff, remove test btw
+                // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
+                if (Button(OBFUSCATE("Add Currency"))) {
+                    // code for button action
+                    addCurrency = true;
+                }
+                TextUnformatted(OBFUSCATE("Adds 1000 gems"));
+                if (Button(OBFUSCATE("Add Skins"))) {
+                    // code for button action
+                    addSkins = true;
+                }
+                Checkbox(OBFUSCATE("Everything unlocked"), &everythingUnlocked);
+                Checkbox(OBFUSCATE("Free Items"), &freeItems);
+                Checkbox(OBFUSCATE("Show Items"), &showAllItems);
+
+		TextUnformatted(OBFUSCATE("Adds 1000 gems"));
+		  ImGui::Combo(OBFUSCATE(""), &m16rn, m16type, IM_ARRAYSIZE(m16type));}
     
+ //
     } else if (page == 2) {
 page = 2;
+	 
 	    SliderFloat(OBFUSCATE("Jump Higher"), &jumpfloat, 0, 0.05f);
     if(ImGui::CollapsingHeader("Speed"))
 	
