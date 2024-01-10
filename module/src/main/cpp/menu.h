@@ -14,7 +14,7 @@ void DrawMenu()
 	
 	///wtff
 		
-    const char* name = "Nazi Menu";
+    const char* name = "Nigger team";
     const char* version = "v1.0";
     
     // Begin the main menu window
