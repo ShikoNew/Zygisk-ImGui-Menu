@@ -29,10 +29,27 @@ void HunterControl(void *instance) {
     return old_HunterControl(instance);
 }
 
-void cyl() { if (m16rn==0){
-	if (jumpfloat >= 0.001) {
+void* PlayerInputInstance;
+void (*old_PlayerInput)(void *instance);
+void PlayerInput(void *instance) {
+    void *manager = *(void**)((uint64_t)instance + 0x158);
+    void *controller = *(void**)((uint64_t)instance + 0xa8);
+    void *character = *(void**)((uint64_t) controller + 0x78);
+    void *cam = *(void**)((uint64_t) instance + 0x140);
+    void *cam2 = *(void**)((uint64_t) instance + 0x148);
+    PlayerInputInstance = instance;
+    if (spawnobjectb) {
+        Instantiate(CreatePrimitive(spawnobjectint), GetPosition(GetTransform(instance)), Quaternion(0,0,0,0));
+        spawnobjectb = false;
+    }
+    if (jumpfloat >= 0.001) {
         OnTrampoline(instance, jumpfloat);
-	}
+}
+
+
+
+void cyl() { if (m16rn==0){
+	
         PATCH("0x16f0c8c", "33008052");
         }
         if(m16rn==1){
