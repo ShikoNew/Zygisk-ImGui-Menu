@@ -29,7 +29,19 @@ void HunterControl(void *instance) {
 }
 
 
-
+void cyl2() { if (sizer==0){
+	
+        
+        }
+        if(sizer==1){
+		
+		
+        }
+        if(sizer==2){
+		
+            
+        }
+       }
 
 
 void cyl() { if (m16rn==0){
