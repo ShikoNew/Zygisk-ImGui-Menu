@@ -112,7 +112,7 @@ page = 2;
 	   } else if (page == 4) {
 		page = 4;
     if (ImGui::CollapsingHeader("Configs")) {
-	    ImGui::Combo(OBFUSCATE(""), &sizer, sizertype, IM_ARRAYSIZE(sizertype));
+	    ImGui::Combo(OBFUSCATE(""), &sizer, sizetype, IM_ARRAYSIZE(sizetype));
 	
 		}
 		if (ImGui::CollapsingHeader("Menu Settings")) {
@@ -126,6 +126,7 @@ page = 2;
         Hooks();
         Patches();
 	cyl();
+	cyl2();
         End();
     
 }
