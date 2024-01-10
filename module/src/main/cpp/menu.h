@@ -76,7 +76,7 @@ page = 1;
                 Checkbox(OBFUSCATE("God Mode"), &isGod);
 			 ImGui::CollapsingHeader("menu size"))
 				 TextUnformatted(OBFUSCATE("Select Spawn"));
-			{ImGui::Combo(OBFUSCATE("m16"), &m16rn, m16type, IM_ARRAYSIZE(m16type));
+			ImGui::Combo(OBFUSCATE(""), &m16rn, m16type, IM_ARRAYSIZE(m16type));
                 // here menu stuff, remove test btw
                 // ImGui::Checkbox(OBFUSCATE("This is a checkbox"), &test);
                 if (Button(OBFUSCATE("Add Currency"))) {
