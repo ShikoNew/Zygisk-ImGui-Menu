@@ -1,6 +1,6 @@
 #ifndef ZYCHEATS_SGUYS_FUNCTIONS_H
 #define ZYCHEATS_SGUYS_FUNCTIONS_H
-#include "Icon.cpp"
+
 #include "BoolFloatEtc.h"
 #include "Include/curl/MenuTool.h"
 #include "Bar.h"
