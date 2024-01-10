@@ -33,15 +33,15 @@ void HunterControl(void *instance) {
 
 
 void cyl() { if (m16rn==0){
-	sleep(1);
+	
         PATCH("0x16f0c8c", "33008052");
         }
         if(m16rn==1){
-		sleep(1);
+		
 		PATCH("0x16f0c8c", "53008052");	
         }
         if(m16rn==2){
-		sleep(1);
+		
             PATCH("0x16f0c8c", "F303002A");
         }
        }
