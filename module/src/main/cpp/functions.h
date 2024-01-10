@@ -38,10 +38,7 @@ void cyl2() { if (sizer==0){
 		styl();
 		
         }
-        if(sizer==2){
-		
-            
-        }
+       
        }
 
 
